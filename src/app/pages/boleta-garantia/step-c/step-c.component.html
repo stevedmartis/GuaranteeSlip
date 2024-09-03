@@ -1,0 +1,30 @@
+<layout [currentNavStringTitles]="['Inicio', 'Boletas de Garantía', 'Simulación Boletas de Garantía']">
+    <div fxLayout="column" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop">
+
+        <h4 class="fw-700 m-0 mb-10">Resumen</h4>
+
+        <div class="box p-0 w-100 container-fluid">
+            <boleta-garantia-box-detail></boleta-garantia-box-detail>
+            <mat-divider></mat-divider>
+            <div class="text-center py-10">
+                <button mat-button class="plano icons-left text-button" (click)="btnSimulateAgain()">
+                    <em class="icon-renovation"></em>
+                    Volver a simular
+                </button>
+            </div>
+        </div>
+        <mat-divider class="mt-20 mb-10"></mat-divider>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="mb-20">
+            <button mat-button fxFlex.lt-sm="100" ngClass.lt-sm="mb-20" class="plano icons-left text-button" (click)="btnGoBack()">
+                <em class="icon-SYS017"></em>
+                Volver
+            </button>
+
+            <button mat-button fxFlex.lt-sm="100" class="base-primary icons-right" type="button" (click)="btnRegisterBG()">
+                Registrar Boleta de Garantía
+                <em class="icon-SYS016"></em>
+            </button>
+        </div>
+
+    </div>
+</layout>

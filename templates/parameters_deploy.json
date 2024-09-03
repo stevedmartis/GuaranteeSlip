@@ -1,0 +1,13 @@
+{
+    "parameters": {
+        "name": {
+          "value": "#{CHL2OFFBKG-APPSERV002}#"
+		},
+		"resource_group": {
+            "value": "#{CHL2OFFBKG-RG}#"
+		},
+		"app_virtual_path": {
+            "value": "/BoletaGarantia"
+		}
+    }
+}

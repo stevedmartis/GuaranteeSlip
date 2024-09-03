@@ -1,0 +1,29 @@
+<div class="envelope" ngClass="desktop" ngClass.xs="mobile" ngClass.sm="tablet"
+  ngClass.md="desktop" gdColumns="repeat(14, 1fr)" gdColumn.gt-lg="repeat(14, 1fr)" gdColumns.md="repeat(14, 1fr)"
+  gdColumns.lt-md="repeat(14, 1fr)" gdGap="0 1.6rem">
+  <div class="container" gdColumn="3/span 10" gdColumn.gt-lg="4/span 8" gdColumn.md="2/span 12"
+    gdColumn.lt-md="1/span 14">
+
+    <div class="box">
+
+      <h3 class="title" [ngStyle]="{ 'justify-content': message.alignIsCenter === true ? 'center' : 'flex-start'}">
+        <span [ngClass]="{
+          'success icon-SYS037': message.type === 'SUCCESS',
+          'info icon-SYS004': message.type === 'INFO',
+          'warning icon-FUNC001': message.type === 'WARN',
+          'error icon-SYS032': message.type === 'ERR'
+        }" class="icon"></span>
+        {{ message.title }}
+      </h3>
+      <div class="box-message">
+        <p [innerHtml]="message.description" [ngStyle]="{ 'text-align': message.alignIsCenter === true ? 'center' : 'left'}"></p>
+      </div>
+
+      <div class="text-center pb-20">
+        <button mat-stroked-button (click)="navigateToHome()">{{message.textButton ?? "Volver al inicio"}}</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

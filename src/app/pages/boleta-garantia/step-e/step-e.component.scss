@@ -1,0 +1,17 @@
+@import '@santander/themes/theming/_variables';
+
+.bg-icon-success {
+    font-size: 30px;
+    color: #008035;
+}
+
+.contextual-message {
+    background: $color-secondary-bg;
+    border-radius: 4px;
+
+    .icon {
+        color: #23779A;
+        font-size: 2.4rem;
+        margin-right: 1rem;
+    }
+}

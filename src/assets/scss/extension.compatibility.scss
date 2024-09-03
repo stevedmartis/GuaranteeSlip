@@ -1,0 +1,52 @@
+@import '@santander/themes/theming/_variables';
+
+::ng-deep {
+    .ob-bg-forms {
+
+        // Ajuste line height inputs en general
+        .mat-form-field {
+            line-height: 1.9rem;
+        }
+
+        // Ajuste icono input select
+        .mat-form-field.mat-form-field-should-float .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix {
+            .mat-select-arrow-wrapper {
+                position: relative;
+                top: -0.5rem;
+            }
+        }
+
+        // Ajuste icono input calendario
+        .mat-form-field.mat-form-field-should-float .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-suffix .mat-datepicker-toggle .mat-icon-button .mat-button-wrapper .icon-calendar-santander {
+            top: -0.5rem;
+        }
+
+        .mat-form-field.mat-form-field-should-float .mat-datepicker-toggle button.mat-icon-button:hover {
+            top: .7rem !important;
+        }
+
+        // Ajuste Underline
+        .mat-form-field-underline {
+            transform: none;
+        }
+
+        // Ajuste (color background, color icono hover y before) amount y calendar 
+        .mat-form-field.mat-form-field-disabled {
+            .mat-form-field-wrapper .mat-form-field-flex {
+                background-color: $color-functional-neutral05;
+                border-color: $color-functional-neutral20;
+            }
+
+            .mat-form-field-wrapper .mat-form-field-underline {
+                background-color: $color-primary-accessiblesky;
+                background-image: none;
+            }
+
+            .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-suffix .mat-datepicker-toggle .mat-icon-button.mat-button-disabled .mat-button-wrapper .icon-calendar-santander,
+            .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-suffix .mat-icon-button:hover .mat-button-wrapper .icon-calendar-santander:before {
+                color: $color-secondary-lightgrey !important;
+                cursor: no-drop;
+            }
+        }
+    }
+}

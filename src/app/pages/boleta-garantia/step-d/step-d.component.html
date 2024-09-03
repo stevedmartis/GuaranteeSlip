@@ -1,0 +1,46 @@
+<layout [currentNavStringTitles]="['Inicio', 'Boletas de Garantía', 'Simulación Boletas de Garantía']">
+    <div fxLayout="column" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop">
+
+        <div class="box p-0 w-100 container-fluid">
+            <div fxLayout="row" fxLayoutAlign="center center" class="mx-15">
+                <span class="bg-icon-success icon-SYS037"></span>
+                <h4 class="ml-10 text-left">La Boleta de Garantía se encuentra registrada</h4>
+            </div>
+            <mat-divider></mat-divider>
+            <boleta-garantia-box-detail [inputTicketNumer]="ticketNumber" [inputRegistrationDate]="registrationDate"></boleta-garantia-box-detail>
+            <mat-divider style="border-top-style: dashed;"></mat-divider>
+            <lib-contextual-message *ngIf="singletonModel.financingModeField == _FinancingMode.CONTRALINEA" [type]="informativeMessageType" class="text-left"
+                [message]="'<b>Autorización pendiente:</b> Una vez registradas la boletas, <b>los apoderados tienen 2 días hábiles corridos para autorizarlas entre las 09:00 y 14:00 hrs.</b> De lo contrario, la solicitud se eliminará automáticamente.'">
+            </lib-contextual-message>
+            <lib-contextual-message *ngIf="singletonModel.financingModeField == _FinancingMode.EFECTIVO" [type]="informativeMessageType" class="text-left"
+                [message]="'<b>Autorización pendiente:</b> Boleta registrada <b>debe ser autorizada antes de las 13:59 del día hábil siguiente,</b> de lo contrario esta quedará sin efecto.'">
+            </lib-contextual-message>
+            <mat-divider></mat-divider>
+            <div class="text-center py-10">
+                <button mat-button class="plano icons-left text-button" (click)="btnDataEdit()">
+                    <em class="icon-FUNC027"></em>
+                    Editar Datos
+                </button>
+            </div>
+        </div>
+        <ng-container *ngIf="!isClickAutorize">
+            <mat-divider class="mt-20 mb-10"></mat-divider>
+            <div fxLayout="row wrap" fxLayoutAlign="center center" class="mb-20">
+                <button mat-stroked-button fxFlex.lt-sm="100" ngClass.lt-sm="mb-20" ngClass.gt-xs="mr-20" (click)="btnRegisterAnotherBG()">
+                    Registrar otra Boleta de Garantía
+                </button>
+
+                <button mat-button fxFlex.lt-sm="100" class="base-primary" type="button" (click)="isClickAutorize=true">
+                    Autorizar Boleta de Garantía
+                </button>
+            </div>
+        </ng-container>
+
+        <div *ngIf="isClickAutorize" class="my-20" ngClass.gt-xs="text-center d-block">
+            <button mat-button fxFlex.xs="100" class="base-primary" type="button" (click)="btnAutorize()">
+                Santander PASS
+            </button>
+        </div>
+
+    </div>
+</layout>

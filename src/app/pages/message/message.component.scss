@@ -1,0 +1,55 @@
+@import "@santander/themes/theming/_variables";
+
+.box {
+    padding: 0;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(25, 25, 25, 0.1);
+    border-radius: .4rem;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 1.6rem;
+    margin: 0;
+    border-bottom: .1rem solid #ddd;
+
+    .icon {
+        font-size: 35px;
+        margin-right: 1rem;
+    }
+}
+
+.box-message {
+    padding: 1.6rem;
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+.error {
+    color: $color-support-error-base;
+}
+
+.success {
+    color: $color-support-succcess-base;
+}
+
+.warning {
+    color: $color-support-warning-base;
+}
+
+.info {
+    color: $color-support-info-base;
+}
+
+button {
+    min-width: 200px;
+}

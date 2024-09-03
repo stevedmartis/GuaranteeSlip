@@ -1,0 +1,27 @@
+<div mat-dialog-title class="header-dialog" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <em class="icon icon-SYS004"></em>
+        <span class="title">Términos y Condiciones del Servicio</span>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-content (scroll)="onScroll($event)" class="content-dialog">
+    <ul>
+        <li class="mb-10">Funcionalidad de Office Banking que permitirá solicitar y contratar Boletas de Garantía con financiamiento y su posterior retiro en cualquier sucursal del Banco Santander, de acuerdo con los términos del contrato previamente suscrito al efecto. Toda solicitud está sujeta a la evaluación y aprobación del Banco de sus políticas crediticias.</li>
+        <li class="mb-10">Las solicitudes de Boletas de garantías realizadas entre las 14:00 hrs y las 24:00 hrs sólo podrán ser autorizadas a contar del día hábil siguiente, entre las 9:00 hrs y las 13:59 hrs.</li>
+        <li class="mb-10">Una vez registrada la solicitud, tendrá 2 días hábiles bancarios corridos para autorizar la emisión de la Boleta de Garantía, teniendo presente el horario antes señalado para su autorización; de lo contrario la autorización será eliminada automáticamente y tendrá que realizar nuevamente la solicitud.</li>
+        <li class="mb-10">El Cliente acepta y autoriza que, al momento de registrar en la plataforma la respectiva Solicitud de Boleta de Garantía con cargo a la línea aprobada, el Banco estará facultado para efectuar cargos, por comisión más IVA y gastos de emisión, en la cuenta corriente seleccionada por el Cliente. En caso de no contar con fondos suficientes, la Solicitud quedará sin efecto.</li>
+        <li class="mb-10">El cliente declara tomar conocimiento y aceptar que las Boletas de Garantía contratadas en UF, serán pagadas por su equivalente en pesos, moneda de curse legal vigente al día del pago efectivo.</li>
+        <li class="mb-10">Las Boletas de Garantía podrán garantizar el cumplimiento de obligaciones de dar, hacer o no hacer con exclusión de las operaciones de crédito de dinero (préstamos o créditos) definido en el art. 1° de la Ley 18.010. En conformidad a lo anterior, acepto y me hago responsable que lo señalado en la glosa se ajuste a lo indicado anteriormente.</li>
+        <li class="mb-10">La Boleta de Garantía se extingue ya sea por el transcurso del plazo de vencimiento, por el pago de esta al beneficiario, o bien, en caso de devolución por parte de éste. En este último caso, el Tomador deberá presentar la Boleta de Garantía junto con la constancia de su devolución por parte del Beneficiario, bastando la leyenda al dorso de la boleta “Devuelta al tomador”, más nombre o razón social del Beneficiario y su firma.</li>
+    </ul>
+    <p class="my-30">Ante cualquier duda, comunícate al Contact Center Empresas al (600) 320 3003.</p>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions *ngIf="data.isOpBtnAccept" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button type="button" class="custom-buttom mr-10" (click)="acceptAction()" [disabled]="!atBottom">Aceptar</button>
+    <button mat-stroked-button type="button" class="custom-buttom" (click)="rejectAction()" [disabled]="!atBottom">Rechazar</button>
+</div>
+<div mat-dialog-actions *ngIf="!data.isOpBtnAccept" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button type="button" class="custom-buttom mr-10" (click)="closeAction()">Cerrar</button>
+</div>

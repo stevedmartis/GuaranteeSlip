@@ -1,0 +1,56 @@
+@import '@santander/themes/theming/_style';
+@import '@santander/themes/theming/_variables';
+
+@import './assets/themes/scss/main.scss';
+
+.color-blue {
+    color: #23779A;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.box {
+    box-shadow: 0px 1px 6px 0px #44444433;
+}
+
+.compact-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.custom-container {
+    max-width: 165rem;;
+}
+
+.tablet {
+    .tableShow {
+        display: show !important;
+    }
+
+    .tabletHide {
+        display: none !important;
+    }
+}
+
+.mobile {
+    .mobileShow {
+        display: show !important;
+    }
+
+    .mobileHide {
+        display: none !important;
+    }
+}
+
+.desktop {
+    .desktopShow {
+        display: show !important;
+    }
+
+    .desktopHide {
+        display: none !important;
+    }
+}

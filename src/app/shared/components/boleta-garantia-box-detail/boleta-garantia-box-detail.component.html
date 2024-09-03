@@ -1,0 +1,75 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" class="py-20">
+    <p class="my-0">Monto a financiar</p>
+    <p class="res-sim-total-amount my-0 fw-700 color-blue">
+        {{singletonModel.amountField | amountPipe : singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+    </p>
+    <p class="res-sim-num-ticket my-0 fw-700 color-blue" *ngIf="inputTicketNumer">N° Boleta: {{ inputTicketNumer }}</p>
+</div>
+<mat-divider style="border-top-style: dashed;"></mat-divider>
+<div fxLayout="row wrap" fxLayoutAlign="space-between start">
+    <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="row wrap" fxLayoutAlign="center start" class="p-15">
+        <p fxFlex="100" class="fw-700">Detalles de la Boleta de Garantía</p>
+        <p fxFlex="50" class="my-5 fw-700">Modo de financiamiento</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.financingModeField}}</p>
+        <ng-container *ngIf="singletonModel.financingModeField == _FinancingMode.CONTRALINEA">
+            <p fxFlex="50" class="my-5 fw-700">Tipo de beneficiario</p>
+            <p fxFlex="50" class="my-5">{{singletonModel.typeBeneficiaryField}}</p>
+        </ng-container>
+        <p fxFlex="50" class="my-5 fw-700">Tipo de moneda</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.coinTypeField}}</p>
+        <p fxFlex="50" class="my-5 fw-700">Tipo de emisión</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.typeIssueField}}</p>
+        <ng-container *ngIf="inputRegistrationDate">
+            <p fxFlex="50" class="my-5 fw-700">Fecha de registro</p>
+            <p fxFlex="50" class="my-5">{{inputRegistrationDate | date: 'dd/MM/yyyy'}}</p>
+        </ng-container>
+        <p fxFlex="50" class="my-5 fw-700">Fecha de vencimiento</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.expirationDateField | date: 'dd/MM/yyyy' }}</p>
+        <ng-container *ngIf="singletonModel.financingModeField == _FinancingMode.CONTRALINEA">
+            <p fxFlex="50" class="my-5 fw-700">Tasa de interés</p>
+            <p fxFlex="50" class="my-5">{{(singletonModel.interestRate | number:'1.2')?.replace('.', ',')}}%</p>
+        </ng-container>
+        <ng-container *ngIf="singletonModel.financingModeField == _FinancingMode.EFECTIVO">
+            <p fxFlex="50" class="my-5 fw-700">Cuenta de origen</p>
+            <p fxFlex="50" class="my-5">{{singletonModel.sourceAccountField.padStart(12, '0') | accountObPipe}}</p>
+        </ng-container>
+        <p fxFlex="50" class="my-5 fw-700">Comisión</p>
+        <p fxFlex="50" class="my-5">
+            {{singletonModel.commissionOut | amountPipe : singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+        </p>
+        <ng-container *ngIf="singletonModel.financingModeField == _FinancingMode.EFECTIVO">
+            <p fxFlex="50" class="my-5 fw-700">IVA</p>
+            <p fxFlex="50" class="my-5">
+                {{singletonModel.ivaOut | amountPipe : singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+            </p>
+            <p fxFlex="50" class="my-5 fw-700 color-blue">Monto total boleta</p>
+            <p fxFlex="50" class="my-5 fw-700 color-blue">
+                {{singletonModel.amountTotalOut | amountPipe : singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+            </p>
+        </ng-container>
+        <ng-container *ngIf="singletonModel.financingModeField == _FinancingMode.CONTRALINEA">
+            <p fxFlex="50" class="my-5 fw-700">Cuenta cargo comisión</p>
+            <p fxFlex="50" class="my-5">{{singletonModel.sourceAccountField.padStart(12, '0') | accountObPipe}}</p>
+        </ng-container>
+    </div>
+    <mat-divider [vertical]="true" style="height: auto; align-self: stretch; border-right-style: dashed;" class="tabletHide mobileHide"></mat-divider>
+    <mat-divider fxFlex.lt-md="100" style="align-self: stretch; border-top-style: dashed;" class="tabletShow mobileShow mt-10"></mat-divider>
+    <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="row wrap" fxLayoutAlign="center center" class="p-15">
+        <p fxFlex="100" class="fw-700">Datos de quien retira la Boleta de Garantía</p>
+
+        <p fxFlex="50" class="my-5 fw-700">Nombre</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.nombre2}}</p>
+        <p fxFlex="50" class="my-5 fw-700">RUT</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.rut2 | rut}}</p>
+        <p fxFlex="50" class="my-5 fw-700">E-mail</p>
+        <p fxFlex="50" class="my-5 compact-text">{{singletonModel.email}}</p>
+
+        <p fxFlex="100" class="fw-700">Datos del beneficiario</p>
+        <p fxFlex="50" class="my-5 fw-700">Nombre</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.nombre}}</p>
+        <p fxFlex="50" class="my-5 fw-700">RUT</p>
+        <p fxFlex="50" class="my-5">{{singletonModel.rut | rut}}</p>
+
+        <p fxFlex="100"><b>Glosa:</b> {{singletonModel.glosa}}</p>
+    </div>
+</div>

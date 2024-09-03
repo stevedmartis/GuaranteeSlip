@@ -1,0 +1,283 @@
+<layout [currentNavStringTitles]="['Inicio', 'Boletas de Garantía', 'Simulación Boletas de Garantía']">
+    <div fxLayout="column" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop">
+
+        <form class="santander-form mb-20 ob-bg-forms" autocomplete="off" novalidate name="formulario"
+            [formGroup]="simulacionForm">
+            <div class="box p-0">
+                <div class="row px-20">
+                    <div>
+                        <h4 class="subtitulo-box my-10">Selecciona el modo de financiamiento para simulación</h4>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+
+                <div class="sim-container-radios pl-14 pt-20 pb-0" ngClass.gt-sm="pr-20" ngClass.lt-md="pr-14">
+                    <mat-radio-group formControlName="financingModeField" (change)="rbChangeFinancingMode($event)"
+                        fxLayout="row wrap" fxLayoutAlign="space-between">
+                        <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="row wrap" fxLayoutAlign="start"
+                            ngClass.gt-sm="pr-20" ngClass.lt-md="pr-0 h-70">
+                            <div fxFlex="initial" fxFlex.xs="100">
+                                <mat-radio-button class="measure-xs mr-20" [value]="_FinancingMode.CONTRALINEA">Contra
+                                    línea</mat-radio-button>
+                            </div>
+                            <div fxFlex="auto" fxFlex.xs="100" ngClass.xs="mt-10">
+                                <mat-form-field class="container-select"
+                                    *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA">
+                                    <mat-label>Selecciona cuenta cargo comisión</mat-label>
+                                    <mat-select panelClass="container-dropdown" formControlName="sourceAccountCLField">
+                                        <mat-option *ngFor="let item of sourceAccounts" [value]="item.accountNumber">{{ (item.accountNumber.padStart(12, '0') | accountObPipe) }}</mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="simulacionForm.get('sourceAccountCLField')?.hasError('required') && simulacionForm.get('sourceAccountCLField').touched">
+                                        Debes seleccionar una cuenta cargo comisión
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <mat-divider vertical class="tabletHide mobileHide" style="height: 5rem;"></mat-divider>
+                        <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="row wrap" fxLayoutAlign="start"
+                            ngClass.lt-md="pl-0 h-70" ngClass.gt-sm="pl-20">
+                            <div fxFlex="initial" fxFlex.xs="100">
+                                <mat-radio-button class="measure-xs mr-20"
+                                    [value]="_FinancingMode.EFECTIVO">Efectivo</mat-radio-button>
+                            </div>
+                            <div fxFlex="auto" fxFlex.xs="100" ngClass.xs="mt-10">
+                                <mat-form-field class="container-select"
+                                    *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.EFECTIVO">
+                                    <mat-label>Tipo de moneda</mat-label>
+                                    <mat-select panelClass="container-dropdown" formControlName="coinTypeField"
+                                        (selectionChange)="changeCoinType($event)">
+                                        <mat-option [value]="_CoinType.CLP">{{_CoinType.CLP}}</mat-option>
+                                        <mat-option [value]="_CoinType.UF">{{_CoinType.UF}}</mat-option>
+                                        <mat-option [value]="_CoinType.USD">{{_CoinType.USD}}</mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="simulacionForm.get('coinTypeField')?.hasError('required') && simulacionForm.get('coinTypeField').touched">
+                                        Debes seleccionar un tipo de moneda
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <ng-container
+                *ngIf="simulacionForm.get('sourceAccountCLField')?.value || simulacionForm.get('coinTypeField')?.value">
+                <div class="box mt-20 pb-30 px-0 pt-0">
+                    <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="px-20 py-10">
+                        <div>
+                            <h4 class="subtitulo-box my-0 mr-10">Completa los datos para la simulación</h4>
+                        </div>
+                        <div>
+                            <a (click)="modalTermCondicionesInitial(simulacionForm.get('financingModeField').value)">Condiciones
+                                del servicio</a>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row mt-20 px-8">
+                        <div class="col-md-4"
+                            *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA">
+                            <mat-form-field class="container-select">
+                                <mat-label>Tipo de beneficiario</mat-label>
+                                <mat-select panelClass="container-dropdown" formControlName="typeBeneficiaryField">
+                                    <mat-option
+                                        [value]="_BeneficiatyType.PUBLIC">{{_BeneficiatyType.PUBLIC}}</mat-option>
+                                    <mat-option
+                                        [value]="_BeneficiatyType.PRIVATE">{{_BeneficiatyType.PRIVATE}}</mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('typeBeneficiaryField')?.hasError('required') && simulacionForm.get('typeBeneficiaryField').touched">
+                                    Debes seleccionar un tipo de beneficiario
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-4"
+                            *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA">
+                            <mat-form-field class="container-select">
+                                <mat-label>Tipo de moneda</mat-label>
+                                <mat-select panelClass="container-dropdown" formControlName="coinTypeCLField"
+                                    (selectionChange)="changeCoinType($event)">
+                                    <mat-option [value]="_CoinType.CLP">{{_CoinType.CLP}}</mat-option>
+                                    <mat-option [value]="_CoinType.UF">{{_CoinType.UF}}</mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('coinTypeCLField')?.hasError('required') && simulacionForm.get('coinTypeCLField').touched">
+                                    Debes seleccionar un tipo de moneda
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6"
+                            *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.EFECTIVO">
+                            <mat-form-field class="container-select">
+                                <mat-label>Selecciona cuenta de origen</mat-label>
+                                <mat-select panelClass="container-dropdown" formControlName="sourceAccountField">
+                                    <mat-option *ngFor="let item of sourceAccountsByCoinType" [value]="item.accountNumber">{{ (item.accountNumber.padStart(12, '0') | accountObPipe) }}</mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('sourceAccountField')?.hasError('required') && simulacionForm.get('sourceAccountField').touched">
+                                    Debes seleccionar una cuenta de origen
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div [ngClass.gt-xs]="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA ? 'col-md-4' : 'col-md-6'"
+                            ngClass.lt-sm="col-md-12">
+                            <mat-form-field>
+                                <input matInput amountInputDirective libAutowidth placeholder="Monto"
+                                    formControlName="amountField" [prefix]="singletonModel.amountPrefix"
+                                    [min]="minAmount" [max]="maxAmount" [decimals]="singletonModel.amountDecimals">
+                                <mat-error *ngIf="simulacionForm.controls['amountField'].hasError('required') 
+                                    && simulacionForm.controls['amountField'].touched">
+                                    El monto es requerido
+                                </mat-error>
+                                <mat-error *ngIf="simulacionForm.controls['amountField'].hasError('minAmount')">
+                                    Debe ingresar un monto mayor a
+                                    {{this.minAmount.toFixed(singletonModel.amountDecimals) | amountPipe :
+                                    singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+                                </mat-error>
+                                <mat-error *ngIf="simulacionForm.controls['amountField'].hasError('maxAmount')">
+                                    Debe ingresar un monto menor a
+                                    {{this.maxAmount.toFixed(singletonModel.amountDecimals) | amountPipe :
+                                    singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row px-8">
+                        <div class="col-md-6">
+                            <mat-form-field class="container-select">
+                                <mat-label>Tipo de emisión</mat-label>
+                                <mat-select panelClass="container-dropdown" formControlName="typeIssueField">
+                                    <mat-option [value]="_IssueType.APLAZO">{{_IssueType.APLAZO}}</mat-option>
+                                    <mat-option [value]="_IssueType.ALAVISTA">{{_IssueType.ALAVISTA}}</mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('typeIssueField')?.hasError('required') && simulacionForm.get('typeIssueField').touched">
+                                    Debes seleccionar un tipo de emisión
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field>
+                                <mat-label>Fecha de vencimiento</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="expirationDateField"
+                                    [min]="minDate" [max]="maxDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker">
+                                    <mat-icon matDatepickerToggleIcon
+                                        class="icon-DOC022 icon-calendar-santander"></mat-icon>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('expirationDateField')?.hasError('required') && simulacionForm.get('expirationDateField').touched">
+                                    Debes ingresar una fecha de vencimiento
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('expirationDateField')?.hasError('matDatepickerMin')">
+                                    Fecha de vencimiento no puede ser inferior a {{minDate | date: 'dd/MM/yyyy'}}
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="simulacionForm.get('expirationDateField')?.hasError('matDatepickerMax')">
+                                    Fecha de vencimiento no puede ser superior a {{maxDate | date: 'dd/MM/yyyy'}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20" *ngIf="!isSimulated" ngClass.gt-xs="text-center d-block">
+                    <button mat-button class="base-primary" type="button" fxFlex.lt-sm="100" [class.disabled]="simulacionForm.invalid"
+                        [disabled]="simulacionForm.invalid" (click)="btnSimular(simulacionForm)">
+                        Simular
+                    </button>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="isSimulated">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between" class="box mt-20 p-20 result-simulation">
+                    <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="column wrap" fxLayoutAlign="center center"
+                        ngClass.gt-sm="pr-20" ngClass.lt-md="pr-0">
+                        <span class="icon icon-account-group-peso"></span>
+                        <p class="res-sim-total-amount-description my-0">
+                            <ng-container
+                                *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA">
+                                Monto Solicitado
+                            </ng-container>
+                            <ng-container
+                                *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.EFECTIVO">
+                                Monto total boleta
+                            </ng-container>
+                        </p>
+                        <p class="res-sim-total-amount my-0 fw-700">
+                            {{singletonModel.amountField | amountPipe : singletonModel.amountDivisaFormat :
+                            singletonModel.amountDecimals}}
+                        </p>
+                    </div>
+                    <mat-divider vertical class="tabletHide mobileHide"></mat-divider>
+                    <mat-divider fxFlex.lt-md="100" class="tabletShow mobileShow" class="mt-20 mb-20"></mat-divider>
+                    <div fxFlex="49.8" fxFlex.lt-md="100" fxLayout="row wrap" fxLayoutAlign="center center"
+                        ngClass.gt-sm="pl-20" ngClass.lt-md="pl-0">
+                        <div *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.EFECTIVO"
+                            fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between" class="mb-5">
+                            <p fxFlex="50" class="my-0 fw-700">Monto a financiar</p>
+                            <div fxFlex="50" ngClass.xs="text-right">
+                                <p class="my-0">
+                                    {{singletonModel.amountField | amountPipe: singletonModel.amountDivisaFormat :
+                                    singletonModel.amountDecimals}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.CONTRALINEA"
+                            fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between" class="mb-5">
+                            <p fxFlex="50" class="my-0 fw-700">Tasa de interés</p>
+                            <div fxFlex="50" ngClass.xs="text-right">
+                                <p class="my-0">
+                                    {{(singletonModel.interestRate | number:'1.2')?.replace('.', ',')}}%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between" class="mb-5">
+                            <p fxFlex="50" class="my-0 fw-700">Comisión</p>
+                            <div fxFlex="50" ngClass.xs="text-right">
+                                <p class="my-0">{{singletonModel.commissionOut | amountPipe:
+                                    singletonModel.amountDivisaFormat :
+                                    singletonModel.amountDecimals}}</p>
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="simulacionForm.get('financingModeField').value == _FinancingMode.EFECTIVO"
+                            fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+                            <p fxFlex="50" class="my-0 fw-700">IVA</p>
+                            <div fxFlex="50" ngClass.xs="text-right">
+                                <p class="my-0">{{singletonModel.ivaOut | amountPipe:
+                                    singletonModel.amountDivisaFormat : singletonModel.amountDecimals}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <mat-divider class="mt-20 mb-10"></mat-divider>
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                    <button mat-button fxFlex.lt-sm="100" ngClass.lt-sm="mb-20" class="plano icons-left text-button"
+                        (click)="btnGoBack()">
+                        <em class="icon-SYS017"></em>
+                        Volver a simular
+                    </button>
+
+                    <button mat-button fxFlex.lt-sm="100" class="base-primary icons-right" type="button"
+                        (click)="btnContinue()">
+                        Continuar
+                        <em class="icon-SYS016"></em>
+                    </button>
+                </div>
+            </ng-container>
+
+        </form>
+
+    </div>
+</layout>

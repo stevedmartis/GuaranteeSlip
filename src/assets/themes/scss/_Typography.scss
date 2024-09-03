@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "SantanderText-SemiBold";
+    src: url("../fonts/text/SantanderTextW05-SemiBold.woff") format("woff"), url("../fonts/text/SantanderTextW05-SemiBold.woff2") format("woff2"), url("../fonts/text/SantanderTextSmBd.ttf") format("truetype"), url("../fonts/text/SantanderTextSmBd.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: "SantanderMicroText-Bold";
+    src: url("../fonts/microtext/SantanderMicroTextBd.ttf") format("truetype"), url("../fonts/microtext/SantanderMicroTextBd.otf") format("opentype"), url("../fonts/microtext/SantanderMicroTextW05-Bold.woff2") format("woff2"), url("../fonts/microtext/SantanderMicroTextW05-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SantanderMicroText-Rg2";
+    src: url("../fonts/microtext/SantanderMicroText2.ttf") format("truetype"), url("../fonts/microtext/SantanderMicroText2.otf") format("opentype"), url("../fonts/microtext/SantanderMicroTextW05-Rg.woff2") format("woff2"), url("../fonts/microtext/SantanderMicroTextW05-Rg.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }

@@ -1,0 +1,31 @@
+@import '@santander/themes/theming/_variables';
+
+.sim-container-radios {
+    min-height: 9rem;
+}
+
+a {
+    color: #127277;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.plano.icons-left.text-button {
+    padding-left: 0;
+}
+
+.result-simulation {
+    .icon {
+        color: #23779A;
+        font-size: 26px;
+    }
+
+    .res-sim-total-amount {
+        color: #23779A;
+        font-size: 22px;
+    }
+}
+
+.h-70 {
+    min-height: 7rem;
+}

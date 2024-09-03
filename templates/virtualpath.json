@@ -1,0 +1,32 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "virtualApplications": {
+            "defaultValue": [{
+                "virtualPath": "/BoletaGarantia",
+                "physicalPath": "site\\BoletaGarantia",
+                "preloadEnabled": false
+            }],
+            "type": "array"
+        },
+        "defaultDocuments": {
+            "defaultValue": [
+                "index.html"
+            ],
+            "type": "array"
+        }
+    },
+    "resources": [{
+        "type": "Microsoft.Web/sites/config",
+        "apiVersion": "2018-11-01",
+        "name": "[concat(parameters('name'), '/web')]",
+        "properties": {
+            "defaultDocuments": "[parameters('defaultDocuments')]",
+            "virtualApplications": "[parameters('virtualApplications')]"
+        }
+    }]
+}

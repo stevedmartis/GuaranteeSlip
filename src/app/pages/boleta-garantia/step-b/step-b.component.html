@@ -1,0 +1,111 @@
+<layout [currentNavStringTitles]="['Inicio', 'Boletas de Garantía', 'Simulación Boletas de Garantía']">
+  <div fxLayout="column" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop">
+    <form class="santander-form ob-bg-forms" autocomplete="off" novalidate [formGroup]="simulacionForm">
+      <div class="container-expansion-panel not-hover">
+        <mat-accordion>
+          <mat-expansion-panel expanded="true" [hideToggle]="true" disabled>
+            <mat-expansion-panel-header matRipple>
+              <mat-panel-title>
+                Datos del beneficiario
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="form-container">
+              <div class="form-row">
+                <mat-form-field class="form-field-2">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="nombre" [maxLength]="40">
+                  <mat-error *ngIf="simulacionForm.get('nombre').hasError('required')">
+                    Nombre es requerido.
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field-2">
+                  <mat-label>RUT</mat-label>
+                  <input matInput libRut id="dni" formControlName="rut" class="dni" [maxLength]="9">
+                  <mat-error *ngIf="simulacionForm.get('rut').hasError('required')">
+                    RUT es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="simulacionForm.get('rut').hasError('validRut')">
+                    RUT es invalido.
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+
+              <lib-contextual-message [type]="informativeMessageType" class="text-left custom-contextual-ob-bg" style="margin-bottom: 1.8rem;"
+                [message]="'En la glosa, <b>no incluyas palabras que impliquen una obligación de crédito</b>, como: mutuo, préstamo, empréstito, financiación, financiamiento y deuda. También debes individualizar la obligación garantizada (máximo 500 caracteres)'">
+              </lib-contextual-message>
+
+              <mat-form-field class="resizing textarea two-line">
+
+                <mat-label>Glosa</mat-label>
+
+                <textarea matInput #resizing maxlength="500" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" formControlName="glosa"
+                 ></textarea>
+                <mat-error *ngIf="simulacionForm.get('glosa').hasError('required')" style="text-align: left;">
+                  Glosa es requerida.
+                </mat-error>
+                <mat-error *ngIf="simulacionForm.get('glosa').hasError('forbiddenWords')"  style="text-align: left;">
+                  La glosa contiene palabras prohibidas.
+                </mat-error>
+                <mat-hint align="end" class="account">{{resizing.value.length}} / 500</mat-hint>
+              </mat-form-field>
+
+
+              <mat-panel-title style="margin-bottom: 1rem;
+              margin-top: 1rem;
+              font-weight: 700;">
+                Datos de quien retira la Boleta Garantía
+              </mat-panel-title>
+
+              <div class="form-row">
+                <mat-form-field class="form-field">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="nombre2" [maxLength]="40">
+                  <mat-error *ngIf="simulacionForm.get('nombre2').hasError('required')">
+                    Nombre es requerido.
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>RUT</mat-label>
+                  <input matInput matInput libRut id="dni" formControlName="rut2" class="dni" [maxLength]="9">
+                  <mat-error *ngIf="simulacionForm.get('rut2').hasError('required')">
+                    RUT es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="simulacionForm.get('rut2').hasError('validRut')">
+                    RUT es invalido.
+                  </mat-error>
+                  <mat-error *ngIf="simulacionForm.get('rut2').hasError('rutsDuplicados')">
+                    Rut debe ser distino al beneficiario
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>E-mail</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error *ngIf="simulacionForm.get('email').hasError('required')">
+                    E-mail es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="simulacionForm.get('email').hasError('pattern')">
+                    E-mail no es válido.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-divider class="mt-20 mb-10"></mat-divider>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="mb-20">
+          <button mat-button class="plano icons-left text-button" (click)="btnGoBack()">
+            <em class="icon-SYS017"></em>
+            Volver a simular
+          </button>
+
+          <button mat-button class="base-primary icons-right" type="button" [disabled]="simulacionForm.invalid" (click)="btnSimular(simulacionForm)">
+            Continuar
+            <em class="icon-SYS016"></em>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</layout>

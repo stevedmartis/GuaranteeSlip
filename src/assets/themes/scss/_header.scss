@@ -1,0 +1,38 @@
+
+header.header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom:0px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: "SantanderText-SemiBold";
+  letter-spacing: -.025rem;
+
+  h2 {
+    padding-bottom:0;
+    font-size:22px;
+    margin:12px 0 !important;
+
+    span {
+       
+      @extend .d-none;
+      @extend .d-sm-none;
+      @extend .d-md-inline;
+      
+      float: right;
+      font-size: 14px;
+      letter-spacing: 0rem;
+      line-height: 2.4em;
+      color:#6f6f6f;
+
+      &.jumper-date {
+
+        @media(max-width:992px){
+          position: absolute;
+          right: 0;
+          padding-top: 45px; 
+          padding-right: 20px;   
+        }
+      }  
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '@santander/themes/theming/_variables';
+
+.breadcrumbs {
+    p,
+    .icon {
+        color: $color-support-info-darker;
+    }
+    .active p {
+        color: $color-secondary-darkergrey;
+    }
+
+    .icon {
+        font-size: x-large;
+    }
+}
+

@@ -1,0 +1,27 @@
+<div mat-dialog-title class="header-dialog" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <em class="icon icon-SYS004"></em>
+        <span class="title">Términos y Condiciones del Servicio</span>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-content (scroll)="onScroll($event)" class="content-dialog">
+    <ul>
+        <li class="mb-10">Funcionalidad de Office Banking que le permitirá solicitar y contratar Boletas de Garantía con cargo a su cuenta corriente y posterior retiro en cualquier sucursal de Banco Santander. Tarifa única por Boleta emitida en pesos 2UF + IVA y en dólares USD 100 + IVA.</li>
+        <li class="mb-10">La solicitud y/o autorización de Boletas de Garantía realizadas entre las 14:00 hrs y las 24:00 hrs serán consideradas como efectuadas el día hábil siguiente.</li>
+        <li class="mb-10">Entiendo y acepto que, al momento de contratar la Boleta de Garantía, el Banco verificará que existan fondos disponibles en la cuenta corriente seleccionada. En caso de no contar con fondos suficientes, la solicitud quedará sin efecto.</li>
+        <li class="mb-10">Autorizo cargar la cuenta corriente indicada, por el monto correspondiente a la comisión más IVA mencionada anteriormente.</li>
+        <li class="mb-10">La Boleta de Garantía se extingue cuando el Beneficiario la hace efectiva o el Tomador la devuelve al Banco dentro del plazo de validez de la misma. Esta deberá incluir en el dorso la leyenda “Devuelta al Tomador”, Nombre o Razón Social y Firma Beneficiario.<br/>Por defecto, toda boleta debe tener un vencimiento. Si el cliente no lo agrega, no debiera seguir avanzando en la aplicación.</li>
+        <li class="mb-10">Las Boletas de Garantía se emiten para garantizar el cumplimiento de obligaciones de dar, hacer o no hacer, con exclusión de las operaciones de crédito de dinero definidas en el Art. 1 Ley 18.010.<br/>En conformidad a lo anterior acepto y me hago responsable que lo señalado en la glosa se ajuste a lo indicado anteriormente.</li>
+        <li class="mb-10">Recuerde que debe ingresar correctamente el Rut Beneficiario. Si existe error en el nombre y/o Rut, el Beneficiario no consta en nuestros registros, deberá contactarse con su Ejecutivo para continuar la contratación.</li>
+    </ul>
+    <p class="my-30">Ante cualquier duda, comunícate al Contact Center Empresas al (600) 320 3003.</p>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions *ngIf="data.isOpBtnAccept" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button type="button" class="custom-buttom mr-10" (click)="acceptAction()" [disabled]="!atBottom">Aceptar</button>
+    <button mat-stroked-button type="button" class="custom-buttom" (click)="rejectAction()" [disabled]="!atBottom">Rechazar</button>
+</div>
+<div mat-dialog-actions *ngIf="!data.isOpBtnAccept" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-button type="button" class="custom-buttom mr-10" (click)="closeAction()">Cerrar</button>
+</div>

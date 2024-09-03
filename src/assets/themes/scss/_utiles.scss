@@ -1,0 +1,164 @@
+
+/* Utility*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* Clear a float with .clearfix*/
+.clearfix {
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+/* Float either direction*/
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; /* 1*/
+    display: table; /* 2*/
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+h2{
+  letter-spacing: -0.02rem;
+    line-height: 1.25;
+}
+
+hr {
+  border: 0;
+  border-top: .1rem solid $color-primary-sky;
+  margin: 3.0rem 0;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.clear {
+  display: block;
+  clear: both; 
+
+  :after, :before {
+    content: " ";
+    display: table;
+    width: 100%;
+    height: 1px; 
+  }
+}
+
+#botonera {
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  >.btn-lg {
+    min-width: 120px;
+    padding: 7px 30px;
+  }
+
+}
+
+a {
+  color: #EC0000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.box {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 0px auto 0px auto;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+h2.titulo-outer-table {
+  font-family: "SantanderMicroText-Bold";
+  font-size: 1.6rem;
+  letter-spacing: -0.01rem;
+  line-height: 1.5;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table-boxed {
+  width: 100%;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  overflow-y: hidden;
+}
+
+table.table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "SantanderMicroText-Rg2";
+  background: white;
+}
+table.table thead > tr {
+  border-bottom: 0.1rem solid #dfdfdf;
+}
+table.table th {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+table.table td, table.table th {
+  padding: 16px 8px;
+  background: white;
+}
+
+td.td-btn-inner-table {
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  padding: 0px 10px !important;
+}
+
+table.table td {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 15px;
+}
+
+table.table tbody > tr {
+  border-bottom: 0.1rem solid #dfdfdf;
+}

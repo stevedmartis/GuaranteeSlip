@@ -1,0 +1,41 @@
+/*v1.1 main.css*/
+@import './_Reset.scss'; 
+@import "./_Variables.scss";
+@import "./_Grid.scss"; 
+@import "./_margin_padding_helper.scss"; 
+/*@import "Fonts"; */
+@import "./_Typography.scss";
+/*@import "iconos-santander";*/
+/*@import "Link";*/
+/*@import "List";*/
+@import './_Button.scss';
+/*@import "Form";*/
+/*@import "Mixins";*/
+/*@import url("./_Tables.scss");*/
+/*@import "Tables_responsive";*/
+/*@import "Stepper";*/
+/*@import "modulos";*/
+/*@import "alertas";*/
+/*@import "breadcrumbs";*/
+
+/* extras*/
+/*@import url('./_header_base.scss');*/
+/*@import "paginador";*/
+@import './_header.scss';
+@import "./_footer.scss";
+@import './utiles.scss';
+
+/*modulos bootstrap3 / jquery*/
+/*@import "Collapse";*/
+/*@import "modal";*/
+/*@import "tabs";*/
+/*@import "popovers";*/
+/*@import "toast";*/
+/*@import "datepicker";*/
+/*@import "nice_select";*/
+/**/
+/*@import "Code";*/
+/*@import "ripple";*/
+
+/*@import "Image";*/
+/*@import "custom-icons";*/

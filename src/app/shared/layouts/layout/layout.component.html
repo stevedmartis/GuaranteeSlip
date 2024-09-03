@@ -1,0 +1,14 @@
+<div class="container-fluid custom-container" ngClass.lt-md="px-15">
+
+    <header class="header">
+        <div fxLayout="row wrap" fxLayoutAlign="flex-start center" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop" class="breadcrumbs">
+            <div *ngFor="let item of currentNavStringTitles; last as isLast" [ngClass]="{'active': isLast}" fxLayout="row wrap" fxLayoutAlign="flex-start center">
+                <p class="body-small">{{item}}</p> <span *ngIf="!isLast" class="icon icon-chevron-right"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <ng-content></ng-content>
+    </main>
+</div>

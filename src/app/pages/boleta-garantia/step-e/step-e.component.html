@@ -1,0 +1,42 @@
+<layout [currentNavStringTitles]="['Inicio', 'Boletas de Garantía', 'Simulación Boletas de Garantía']">
+    <div fxLayout="column" ngClass.xs="mobile" ngClass.sm="tablet" ngClass.gt-md="desktop" ngClass.md="laptop">
+
+        <div class="box p-0 w-100 container-fluid">
+            <div fxLayout="row" fxLayoutAlign="center center" class="mx-15">
+                <span class="bg-icon-success icon-SYS037"></span>
+                <h4 class="ml-10 text-left">La Boleta de Garantía se encuentra autorizada</h4>
+            </div>
+            <mat-divider></mat-divider>
+            <boleta-garantia-box-detail [inputTicketNumer]="ticketNumber"
+                [inputRegistrationDate]="registrationDate"></boleta-garantia-box-detail>
+            <mat-divider style="border-top-style: dashed;"></mat-divider>
+            
+            <div class="contextual-message m-15 py-20 px-15">
+                <p class="my-0 body-small"><b>Tips para el retiro de Boleta de Garantía en sucursal</b></p>
+                <div fxLayout="row" fxLayoutAlign="start center" class="mt-10">
+                    <span class="icon icon-SERV150"></span>
+                    <p class="my-0 body-small">La persona que retirará la Boleta de Garantía en sucursal de Banco Santander debe&nbsp;<b>llevar su cédula de identidad vigente.</b></p>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" class="mt-10">
+                    <span class="icon icon-FUNC004"></span>
+                    <p class="my-0 body-small">La Boleta esta disponible para retirar en cualquier sucursal de Banco Santander, de&nbsp;<b>lunes a viernes entre las 09:00 y las 14:00 hrs.</b></p>
+                </div>                
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="text-center py-10">
+                <button mat-button class="plano icons-left text-button" (click)="btnDownloadReceipt()">
+                    <em class="icon-pdf"></em>
+                    Descargar comprobante
+                </button>
+            </div>
+        </div>
+        
+        <div class="my-20" ngClass.gt-xs="text-center d-block">
+            <button mat-button fxFlex.xs="100" class="base-primary" type="button" (click)="btnRegisterAnotherBG()">
+                Registrar otra Boleta de Garantía
+            </button>
+        </div>
+
+    </div>
+</layout>

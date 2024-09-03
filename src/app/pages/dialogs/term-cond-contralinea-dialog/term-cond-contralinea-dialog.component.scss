@@ -1,0 +1,53 @@
+@import '@santander/themes/theming/_variables';
+
+::ng-deep.bg-sim-modal {
+    max-width: 73rem !important;
+    width: 80rem;
+    margin: 0 1.5rem;
+    .mat-dialog-container {
+        padding: 0;
+    }
+
+    .mat-dialog-title {
+        margin: 0;
+    }
+
+    .mat-dialog-content {
+        margin: 0;
+    }
+
+    .mat-dialog-actions {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+.header-dialog {
+    padding: 15px;
+
+    .icon {
+        color: $color-secondary-private-turquoise;
+        font-size: 3.6rem;
+        margin-right: 1.4rem;
+    }
+}
+
+.content-dialog {
+    height: 65vh;
+    max-height: 53rem;
+}
+
+ul {
+    padding-inline-start: 15px;
+    li {
+        padding-left: 10px;
+        list-style: outside;
+    }
+    li::marker {
+        color: $color-dark-primary-santander;
+    }
+} 
+
+.custom-buttom {
+    width: 112px;
+}

@@ -1,0 +1,350 @@
+/* nuevos */
+
+/* Start Colors*/
+
+$color-primary-santander: #ec0000;
+$color-functional-santander90: #ee1919;
+$color-functional-santander80: #f03333;
+$color-functional-santander70: #f24c4c;
+$color-functional-santander60: #f46666;
+$color-functional-santander50: #f67f7f;
+$color-functional-santander40: #f89999;
+$color-functional-santander30: #fab2b2;
+$color-functional-santander20: #fccccc;
+$color-functional-santander10: #fee5e5;
+$color-functional-santander05: #fff2f2;
+$color-primary-boston: #cc0000;
+$color-primary-ruby: #990000;
+$color-primary-sky: #deedf2;
+$color-functional-sky90: #e2eff4;
+$color-functional-sky80: #e5f1f5;
+$color-functional-sky70: #e8f3f6;
+$color-functional-sky60: #ecf5f8;
+$color-functional-sky50: #eff6f9;
+$color-functional-sky40: #f2f8fa;
+$color-functional-sky30: #f6fafc;
+$color-functional-sky20: #f9fcfd;
+$color-functional-sky10: #fcfefe;
+$color-primary-mediumsky: #cedee7;
+$color-primary-darksky: #9bc3d3;
+$color-secondary-accessiblesky: #257fa4;
+$color-primary-white: #ffffff;
+$color-primary-black: #000000;
+$color-primary-empresas: #80715D;
+$color-primary-select: #666666;
+$color-dark-grey: #444444;
+$color-santander-red: #ec0000;
+$color-support-warning-base: #E59D27;
+$color-support-warning-darker: #946F00;
+$color-support-warning-lighter: #FFFAEB;
+$color-support-error-base: #CC0000;
+$color-support-error-darker: #990000;
+$color-support-error-lighter: #FEE5E5;
+$color-support-info-base: #1BB3BC;
+$color-support-info-darker: #137E84;
+$color-support-info-lighter: #E2EFF4;
+$color-support-succcess-base: #63BA68;
+$color-support-succcess-darker: #3A8340;
+$color-support-succcess-lighter: #F0F8F0;
+$color-secondary-lighter-santander: #FB766A;
+$color-secondary-lighter-green: #00DCB0;
+$color-secondary-darkergrey: #222222;
+$color-secondary-grey: #444444;
+$color-secondary-mediumgrey: #767676;
+$color-secondary-lightgrey: #cccccc;
+$color-secondary-lightergrey: #F0F0F0;
+$color-secondary-yellow: #ffcc33;
+$color-functional-yellow90: #ffd147;
+$color-functional-yellow80: #ffd75c;
+$color-functional-yellow70: #ffdc70;
+$color-functional-yellow60: #ffe185;
+$color-functional-yellow50: #ffe699;
+$color-functional-yellow40: #ffebae;
+$color-functional-yellow30: #fff0c2;
+$color-functional-yellow20: #fff5d7;
+$color-functional-yellow10: #fffaeb;
+$color-functional-yellow05: #fffdf5;
+$color-secondary-limegreen: #63ba68;
+$color-functional-limegreen90: #73c177;
+$color-functional-limegreen80: #83c887;
+$color-functional-limegreen70: #92cf96;
+$color-functional-limegreen60: #a2d6a5;
+$color-functional-limegreen50: #b1ddb4;
+$color-functional-limegreen40: #c1e4c3;
+$color-functional-limegreen30: #d0ebd2;
+$color-functional-limegreen20: #e0f2e1;
+$color-functional-limegreen10: #f0f8f0;
+$color-functional-limegreen05: #f8fcf8;
+$color-secondary-turquoise: #1dd3bc;
+$color-functional-turquoise: #1dd3bc;
+$color-functional-turquoise90: #32bbc3;
+$color-functional-turquoise80: #49c3ca;
+$color-functional-turquoise70: #5fcad0;
+$color-functional-turquoise60: #77d2d7;
+$color-functional-turquoise50: #8dd9de;
+$color-functional-turquoise40: #a4e1e5;
+$color-functional-turquoise30: #bbe9eb;
+$color-functional-turquoise20: #e8f8f9;
+$color-functional-turquoise10: #e8f8f9;
+$color-functional-turquoise05: #f4fcfc;
+$color-secondary-blue: #3366ff;
+$color-functional-blue90: #4755ff;
+$color-functional-blue80: #5c85ff;
+$color-functional-blue70: #7094ff;
+$color-functional-blue60: #85a4ff;
+$color-functional-blue50: #99b3ff;
+$color-functional-blue40: #aec2ff;
+$color-functional-blue30: #c2d1ff;
+$color-functional-blue20: #d7e1ff;
+$color-functional-blue10: #ebf0ff;
+$color-functional-blue05: #f5f8ff;
+$color-secondary-purple: #9e3667;
+$color-functional-purple90: #a84a76;
+$color-functional-purple80: #b25f86;
+$color-functional-purple70: #bb7295;
+$color-functional-purple60: #c587a4;
+$color-functional-purple50: #cf9bb3;
+$color-functional-purple40: #d9afc3;
+$color-functional-purple30: #e2c3d2;
+$color-functional-purple20: #ecd7e1;
+$color-functional-purple10: #f6ebf0;
+$color-functional-purple05: #fbf5f8;
+$color-secondary-bg: #f5f9fb;
+$color-secondary-darkyellow: #946f00;
+$color-secondary-green: #008437;
+$color-secondary-darkturquoise: #137e84;
+$color-secondary-darkblue: #0032e6;
+$color-secondary-darkpurple: #9e3667;
+$color-primary-accessiblesky: #257fa4;
+$color-functional-linkdefault: #ec0000;
+$color-functional-linkhover: #990000;
+$color-functional-linkactive: #cc0000;
+$color-functional-linkvisited: #9e3667;
+$color-functional-neutral: #444444;
+$color-functional-neutral90: #575757;
+$color-functional-neutral80: #6a6a6a;
+$color-functional-neutral70: #7c7c7c;
+$color-functional-neutral60: #8f8f8f;
+$color-functional-neutral50: #a2a2a2;
+$color-functional-neutral40: #b5b5b5;
+$color-functional-neutral30: #c7c7c7;
+$color-functional-neutral20: #dadada;
+$color-functional-neutral10: #ececec;
+$color-functional-neutral05: #f6f6f6;
+$color-functional-dropbox: #0061ff;
+$color-functional-facebook: #3b5998;
+$color-functional-googleplus: #d34836;
+$color-functional-instagram: #c7c7c7;
+$color-functional-linkedin: #0077b5;
+$color-functional-skype: #00aff0;
+$color-functional-spotify: #1ed760;
+$color-functional-twitter: #00b6f1;
+$color-functional-darkerror: #990000;
+$color-functional-error: #cc0000;
+$color-functional-lighterror: #fee5e5;
+$color-functional-darksuccess: #3a8340;
+$color-functional-success: #63ba68;
+$color-functional-lightsuccess: #f0f8f0;
+$color-functional-darkwarning: #946f00;
+$color-functional-warning: #E59D27;
+$color-functional-lightwarning: #fffaeb;
+$color-primary-private-santander: #ec0000;
+$color-private-santander90: #ee1919;
+$color-private-santander80: #f03333;
+$color-private-santander70: #f24c4c;
+$color-private-santander60: #f46666;
+$color-private-santander50: #f67f7f;
+$color-private-santander40: #f89999;
+$color-private-santander30: #fab2b2;
+$color-private-santander20: #fccccc;
+$color-private-santander10: #fee5e5;
+$color-private-santander05: #fff2f2;
+$color-primary-private-white: #ffffff;
+$color-primary-private-anthracite: #1d252d;
+$color-private-anthracite90: #333a42;
+$color-private-anthracite80: #4a5157;
+$color-private-anthracite70: #60666c;
+$color-private-anthracite60: #777c81;
+$color-private-anthracite50: #8e9296;
+$color-private-anthracite40: #a5a8ab;
+$color-private-anthracite30: #bbbdc0;
+$color-private-anthracite20: #d2d3d5;
+$color-private-anthracite10: #e8e9ea;
+$color-private-anthracite05: #f3f4f4;
+$color-secondary-private-turquoise: #1bb3bc;
+$color-private-turquoise90: #32bbc3;
+$color-private-turquoise80: #49c3ca;
+$color-private-turquoise70: #5fcad0;
+$color-private-turquoise60: #77d2d7;
+$color-private-turquoise50: #8dd9de;
+$color-private-turquoise40: #a4e1e5;
+$color-private-turquoise30: #bbe9eb;
+$color-private-turquoise20: #e8f8f9;
+$color-private-turquoise10: #e8f8f9;
+$color-private-turquoise05: #f4fcfc;
+$color-secondary-private-blue: #3366ff;
+$color-private-blue90: #4775ff;
+$color-private-blue80: #5c85ff;
+$color-private-blue70: #7094ff;
+$color-private-blue60: #85a4ff;
+$color-private-blue50: #99b3ff;
+$color-private-blue40: #aec2ff;
+$color-private-blue30: #c2d1ff;
+$color-private-blue20: #d7e1ff;
+$color-private-blue10: #ebf0ff;
+$color-private-blue05: #f5f8ff;
+$color-secondary-private-purple: #9e3667;
+$color-secondary-private-graphite: #6f7779;
+$color-private-graphite90: #7d8486;
+$color-private-graphite80: #8c9294;
+$color-private-graphite70: #9a9fa1;
+$color-private-graphite60: #a9adaf;
+$color-private-graphite50: #b7bbbc;
+$color-private-graphite40: #c5c9c9;
+$color-private-graphite30: #d3d6d6;
+$color-private-graphite20: #e2e4e4;
+$color-private-graphite10: #f0f1f1;
+$color-private-graphite05: #f8f8f8;
+$color-dark-primary-santander: #ec0000;
+$color-dark-primary-boston: #cc0000;
+$color-dark-primary-ruby: #fb766a;
+$color-dark-primary-yellow: #ffcc33;
+$color-dark-primary-limegreen: #00ecb0;
+$color-dark-primary-turquoise: #1bb3bc;
+$color-dark-primary-blue: #0055ff;
+$color-dark-primary-purple: #9e3667;
+$color-dark01: #0d0d0d;
+$color-dark02: #1c1c1e;
+$color-dark03: #2c2c2e;
+$color-dark04: #3a3a3c;
+$color-dark05: #48484a;
+$color-dark06: #636366;
+/* End Color*/
+/* Start Spacing*/
+$spacing-xxs: 0.2rem;
+$spacing-xs: 0.4rem;
+$spacing-s: 0.8rem;
+$spacing-m: 1.6rem;
+$spacing-l: 2.4rem;
+$spacing-xl: 3.2rem;
+$spacing-xxl: 4.8rem;
+$spacing-xxXl: 6.4rem;
+/* End Spacing
+ Start Elevation levels*/
+$raised: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+$floating: 0 8px 10px 0 rgba(0, 0, 0, 0.15);
+$abone: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
+
+$box-shadow: $raised;
+
+
+/* End Elevation levels
+/* Start Tipografía*/
+$display-48: 4.8rem;
+$display-32: 3.2rem;
+$headline-24: 2.4rem;
+$title-20: 2rem;
+$subheading-16: 1.6rem;
+$body-14: 1.4rem;
+$caption-12: 1.2rem;
+$big-button-16: 1.6rem;
+$simple-button-14: 1.4rem;
+/* End Tipografía
+/*Gradients Colors Start*/
+$gradients-red: linear-gradient(to right, #800000, #ec0000);
+$gradients-green: linear-gradient(to right, #abc111, #e59d27);
+$gradients-light-brown: linear-gradient(to right, #e59d27, #abc111);
+$gradients-strong-cyan: linear-gradient(to right, #1bb3bc, #9e3667);
+$gradients-moderate-pink: linear-gradient(to right, #9e3667, #1bb3bc);
+/*Gradients Colors End*/
+$icon-size-small: 2.4rem;
+$icon-size-medium: 3.6rem;
+$icon-size-large: 4.8rem;
+
+
+
+/* ==================================OLD SOME DEPRECATED*/
+
+
+
+/*botones*/
+
+
+/* duedatepicker*/
+$color-initial: #fff;
+$color-primary: #9b4dca;
+$color-secondary: #606c76;
+$color-tertiary: #000000;
+$color-quaternary: #000000;
+$color-quinary: #000000;
+
+/* variables santander
+
+/* Do not edit directly*/
+/* Generated on Tue, 04 Apr 2023 13:43:37 GMT*/
+
+$elevation-00: 0 0 0 0 rgba(0,0,0,0); /* resting*/
+$elevation-01: 0 1px 4px 0 rgba(0,0,0,0.15); /* small*/
+$elevation-02: 0 3px 4px 0 rgba(0,0,0,0.12); /* medium*/
+$elevation-03: 0 5px 8px 0 rgba(0,0,0,0.12); /* large*/
+$elevation-04: 0 16px 32px -12px rgba(0,0,0,0.16); /* extra large*/
+$elevation-05: 0 32px 32px -12px rgba(0,0,0,0.16); /* xl extra large*/
+$size-font-10: 2.625rem; 
+$size-line-height-10: 3.25rem; 
+$size-font-11: 3rem; 
+$size-line-height-11: 3.75rem; 
+$size-font-12: 3.375rem; 
+$size-line-height-12: 4rem; 
+$size-font-13: 3.75rem; 
+$size-line-height-13: 4.5rem; 
+$size-font-00: 0.625rem; 
+$size-line-height-00: 1rem; 
+$size-font-01: 0.75rem; 
+$size-line-height-01: 1rem; 
+$size-font-02: 0.875rem; 
+$size-line-height-02: 1.25rem; 
+$size-font-03: 1rem; 
+$size-line-height-03: 1.5rem; 
+$size-font-04: 1.125rem; 
+$size-line-height-04: 1.5rem; 
+$size-font-05: 1.25rem; 
+$size-line-height-05: 1.5rem; 
+$size-font-06: 1.5rem; 
+$size-line-height-06: 2rem; 
+$size-font-07: 1.75rem; 
+$size-line-height-07: 2rem; 
+$size-font-08: 2rem; 
+$size-line-height-08: 2.25rem; 
+$size-font-09: 2.25rem; 
+$size-line-height-09: 2.75rem; 
+$gradient-01: linear-gradient(180deg, rgba(34,34,34,0) 0%, rgba(34,34,34,1) 100%); 
+$gradient-02: linear-gradient(180deg, rgba(34,34,34,1) 0%, rgba(34,34,34,0)  100%); 
+$gradient-03: linear-gradient(180deg, rgba(204,0,0,0) 0%, rgba(204,0,0,1) 100%); /* linear gradient bottom to top boston*/
+$gradient-04: linear-gradient(180deg, rgba(204,0,0,1) 0%, rgba(204,0,0,0) 100%); /* linear gradient top to bottom boston*/
+$size-border-radius-01: 0rem; /* 0px (squared)*/
+$size-border-radius-02: 0.25rem; /* rounded 4px*/
+$size-border-radius-03: 0.5rem; /* rounded 8px*/
+$size-border-radius-04: 0.75rem; /* rounded 12px*/
+$size-border-radius-05: 3.125rem; /* full rounded*/
+$size-border-radius-06: 0.125rem; /* rounded 2px*/
+$size-border-width-01: 0.0625rem; /* 1px*/
+$size-border-width-02: 0.125rem; /* 2px*/
+$size-spacing-10: 3.5rem; /* space-56 / 56px*/
+$size-spacing-11: 4rem; /* space-64 / 64px*/
+$size-spacing-12: 4.5rem; /* space-72 / 72px*/
+$size-spacing-13: 5rem; /* space-80 / 80px*/
+$size-spacing-14: 5.5rem; /* space-88 / 88px*/
+$size-spacing-15: 6rem; /* space-96 / 96px*/
+$size-spacing-00: 0.125rem; /* space-2 / 2px*/
+$size-spacing-01: 0.25rem; /* space-4 / 4px*/
+$size-spacing-02: 0.5rem; /* space-8 / 8px*/
+$size-spacing-03: 0.75rem; /* space-12 / 12px*/
+$size-spacing-04: 1rem; /* space-16 / 16px*/
+$size-spacing-05: 1.25rem; /* space-20 / 20px*/
+$size-spacing-06: 1.5rem; /* space-24 / 24px*/
+$size-spacing-07: 2rem; /* space-32 / 32px*/
+$size-spacing-08: 2.5rem; /* space-40 / 40px*/
+$size-spacing-09: 3rem; /* space-48 / 48px*/
+
+
+
